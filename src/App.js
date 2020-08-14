@@ -30,20 +30,18 @@ class App extends React.Component{
         const response =await youtube.get('search',{ params:{
           part:'snippet',
           maxresult:2,
-          key:'AIzaSyCZtWZuLaDAterjDCRsy6evluQrE3_NvZg',
+          key:'[Your Google API_KEY]',
           q:searchTerm
       }
   });
-        console.log(response.data.items); 
+        
         this.setState({videos:response.data.items,selectedVideo:response.data.items[0]});
     }
 
 
     render(){
       const {selectedVideo,videos}=this.state;
-      console.log("jii");
-      
-
+     
       return (
         <Grid justify="center" container spacing={10}>
           <Grid item xs={11}>
